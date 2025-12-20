@@ -6,6 +6,9 @@ Building a modern data warehouse using medallion architecture with SQL server, i
 ##  Project Requirements
 ### 1) Building the Data Warehouse (Medallion Architecture)
 
+#### Tool
+SQL Server
+
 #### Objective
 Develop a modern data warehouse using SQL server to consolidate sales data from different sources, resulting in analytical reporting and informed decision-making
 
@@ -17,6 +20,8 @@ Develop a modern data warehouse using SQL server to consolidate sales data from 
 - **Documentation**: Provide clear documentation of the data model to support both business stakeholders and analytics teams
 
 ### 2) BI: Analytics & Reporting
+#### Tool
+SQL Server
 
 #### Objective
 Develop SQL-based analytics to deliver detailed insights into:
@@ -26,4 +31,4 @@ Develop SQL-based analytics to deliver detailed insights into:
 
 
 ## License
-This project is licensed under the [MIT License](License). You are free to use, modify, and share this project with proper attribution at your discretion
+This project is licensed under the [MIT License](https://github.com/ChawinHong/Data-Warehouse-Medallion-Project/blob/main/LICENSE). You are free to use, modify, and share this project with proper attribution at your discretion
