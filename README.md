@@ -58,13 +58,13 @@ The data architecture for this project follows **Medallion Architecture**: **Bro
 
 ## 🗂️Repository Structure
 ```
-1) dataset/                 # Raw datasets used for project (ERP and CRM data)
-2) docs/                    # Project documentation and architecture details
-3) scripts_data_analysis/   # SQL scripts for Exploratory Data Analysis (EDA) and Advanced Analysis
-4) scripts/                 # SQL scripts for ETL and transformation
-5) tests/                   # Test scripts and quality files
-6) LICENSE                  # License information for the repository
-7) README.md                # Project overview and instructions
+1) dataset/                                # Raw datasets used for project (ERP and CRM data)
+2) docs/                                   # Project documentation and architecture details
+3) scripts_data_analysis/                  # SQL scripts for Exploratory Data Analysis (EDA) and Advanced Analysis
+4) scripts_data_warehouse_creation/        # SQL scripts for ETL and transformation
+5) tests/                                  # Test scripts and quality files
+6) LICENSE                                 # License information for the repository
+7) README.md                               # Project overview and instructions
 ```
 
 ## 🛡️License
