@@ -26,3 +26,42 @@ FROM product_segments
 GROUP BY cost_range
 ORDER BY total_products DESC
 
+
+/*
+Group customers into 3 segments based on their spending behavior:
+	- VIP: Customers with at least 12 months of history and spending more than $5000
+	- Regular: Customers with at least 12 months of history but spending $5000 or less
+	- New: Customers with a lifespan less than 12 months
+and find the total number of customers by each group
+*/
+
+
+WITH customer_spending AS (
+SELECT 
+c.customer_key,
+-- f.sales_amount,
+-- f.order_date,
+MIN(order_date) AS first_order,
+MAX(order_date) AS last_order,
+DATEDIFF(month,MIN(order_date),MAX(order_date)) AS lifespan,
+SUM(sales_amount) AS total_spending
+FROM gold.fact_sales f
+LEFT JOIN gold.dim_customers c
+	ON f.customer_key = c.customer_key
+GROUP BY c.customer_key
+)
+
+SELECT customer_segment
+	, count(customer_key) AS total_customer
+FROM (
+SELECT 
+		customer_key,
+		total_spending,
+		lifespan,
+		CASE WHEN lifespan >= 12 AND total_spending > 5000 THEN 'VIP'
+			WHEN lifespan >= 12 AND total_spending <= 5000 THEN 'Regular'
+			ELSE 'NEW' END AS customer_segment
+FROM customer_spending
+) t
+GROUP BY customer_segment
+ORDER BY total_customer DESC
